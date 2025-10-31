@@ -1,0 +1,131 @@
+
+:root {
+  --color-primary: #4A5FC1;
+  --color-secondary: #959bc9;
+  --color-accent: #15a59e;
+  --color-neutral-light: #f4f4f4;
+  --color-neutral-dark: #fcf0f0;
+
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.5rem;
+  --font-size-xl: 2rem;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/*Grid aplicado*/
+body {
+  margin: 0;
+  padding: var(--space-2);
+  box-sizing: border-box;
+  background-color:#d2dbdd;
+  color:(#f4f4f4);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-size: var(--font-size-md);
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh; 
+}
+
+header {
+  padding: 2rem;
+  background-color: var(--color-accent);
+  color: white;
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Imagens*/
+img {
+  width: 200px;
+  border: none;
+}
+
+/* FORMULÁRIOS */
+fieldset {
+  width: 300px;
+  padding: 1rem;
+  color: rgb(0, 0, 0);
+  font-style: italic;
+  background: rgba(255, 255, 255, 0.692);
+}
+
+/*BOTÕES*/
+button {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-2);
+  justify-content: center;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 992px) {
+  main {
+    flex-direction: column;
+  }
+
+  fieldset {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: var(--font-size-sm);
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+}
