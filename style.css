@@ -1,9 +1,8 @@
-
 :root {
-  --color-primary: #4A5FC1;
-  --color-secondary: #959bc9;
-  --color-accent: #15a59e;
-  --color-neutral-light: #f4f4f4;
+  --color-primary: #030303;
+  --color-secondary: #eff0fa;
+  --color-accent: #a05b91;
+  --color-neutral-light: #7e2864;
   --color-neutral-dark: #fcf0f0;
 
   --font-size-xs: 0.75rem;
@@ -20,70 +19,131 @@
   --space-6: 64px;
 }
 
-/*Grid aplicado*/
+/* ======== BASE ======== */
 body {
   margin: 0;
   padding: var(--space-2);
   box-sizing: border-box;
-  background-color:#d2dbdd;
-  color:(#f4f4f4);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #bb8aa2;
+  color: #202020;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 300;
   font-size: var(--font-size-md);
-
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh; 
 }
 
 header {
-  padding: 2rem;
-  background-color: var(--color-accent);
-  color: white;
+  background-color: rgb(172, 93, 93);
+  color: var(--color-primary);
   text-align: center;
+  padding: var(--space-4) 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-bottom: 3px solid var(--color-secondary);
+}
+
+header h1 {
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-1);
+}
+
+header p {
+  font-size: var(--font-size-sm);
+  color: #fff8f8;
+}
+
+nav {
+  background-color: var(--color-primary);
+  padding: var(--space-2) 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(248, 246, 246);
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px rgba(21, 165, 158, 0.6);
 }
 
 main {
-  padding: 2rem;
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: var(--space-4);
 }
 
 section {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: var(--space-2);
+  background: white;
+  padding: var(--space-4);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Imagens*/
+section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
 img {
-  width: 200px;
-  border: none;
+  width: 220px;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* FORMULÁRIOS */
+ */
 fieldset {
   width: 300px;
-  padding: 1rem;
-  color: rgb(0, 0, 0);
+  padding: var(--space-3);
+  color: #000;
   font-style: italic;
-  background: rgba(255, 255, 255, 0.692);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--color-secondary);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-/*BOTÕES*/
+
 button {
   background-color: var(--color-primary);
   color: white;
   border: none;
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-4);
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: var(--font-size-md);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 button:hover {
   background-color: var(--color-accent);
+  box-shadow: 0 4px 10px rgba(21, 165, 158, 0.4);
+  transform: scale(1.05);
 }
 
 button:disabled {
@@ -91,41 +151,49 @@ button:disabled {
   cursor: not-allowed;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: var(--space-2);
-  justify-content: center;
-  padding: 0;
+
+footer {
+  text-align: center;
+  padding: var(--space-4);
+  background-color: var(--color-neutral-light);
+  font-size: var(--font-size-sm);
+  color: #666;
+  border-top: 1px solid #ddd;
 }
 
-nav a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-}
-
-nav a:hover {
-  color: var(--color-accent);
-}
 
 @media (max-width: 992px) {
   main {
     flex-direction: column;
+    padding: var(--space-3);
   }
 
   fieldset {
     width: 100%;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 600px) {
   header {
     font-size: var(--font-size-sm);
+    padding: var(--space-3);
   }
 
   nav ul {
     flex-direction: column;
     gap: var(--space-1);
   }
+
+  img {
+    width: 100%;
+  }
+
+  section {
+    padding: var(--space-3);
+  }
 }
+
